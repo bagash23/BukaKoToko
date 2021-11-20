@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en">
+  <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Seller Center</title>
+  </head>
+  <body>
+    <section class="h-100 w-100" style="
+    box-sizing: border-box;
+    position: relative;
+    background-color: #FAFCFF;
+  ">
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+  .header-3-3 .modal-backdrop.show {
+    background-color: #000;
+    opacity: 0.6;
+  }
+
+  .header-3-3 .modal-item.modal {
+    top: 2rem;
+  }
+
+  .header-3-3 .navbar {
+    padding: 2rem 2rem;
+  }
+
+  .header-3-3 .navbar-light .navbar-nav .nav-link {
+    font: 300 0.875rem/1.5rem Poppins, sans-serif;
+    color: #8B9CAF;
+    padding: 0rem 1.25rem 0rem 0rem;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .header-3-3 .navbar-light .navbar-nav .nav-link:hover {
+    font: 500 0.875rem/1.5rem Poppins, sans-serif;
+    color: #033142;
+  }
+
+  .header-3-3 .navbar-light .navbar-nav .active {
+    position: relative;
+    width: fit-content;
+  }
+
+  .header-3-3 .navbar-light .navbar-nav .active>.nav-link,
+  .header-3-3 .navbar-light .navbar-nav .nav-link.active,
+  .header-3-3 .navbar-light .navbar-nav .nav-link.show,
+  .header-3-3 .navbar-light .navbar-nav .show>.nav-link {
+    font-weight: 500;
+  }
+
+  .header-3-3 .navbar-light .navbar-toggler-icon {
+    background-image: urlurl("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  .header-3-3 .btn:focus,
+  .header-3-3 .btn:active {
+    outline: none !important;
+  }
+
+  .header-3-3 .btn-fill {
+    font: 500 0.875rem/1.25rem Poppins, sans-serif;
+    border: 1px solid #4E91F9;
+    background-color: #4E91F9;
+    border-radius: 999px;
+    padding: 0.75rem 1.5rem;
+    transition: 0.3s;
+  }
+
+  .header-3-3 .btn-fill:hover {
+    background-color: #6DA4F9;
+    border: 1px solid #6DA4F9;
+  }
+
+  .header-3-3 .btn-no-fill {
+    font: 500 0.875rem/1.25rem Poppins, sans-serif;
+    color: #8B9CAF;
+    padding: 0.75rem 2rem;
+  }
+
+  .header-3-3 .btn-no-fill:hover {
+    color: #033142;
+  }
+
+  .header-3-3 .modal-item .modal-dialog .modal-content {
+    border-radius: 8px;
+  }
+
+  .header-3-3 .responsive li {
+    padding: 1rem;
+  }
+
+  .header-3-3 .hr {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .header-3-3 .hero {
+    padding: 4rem 2rem;
+  }
+
+  .header-3-3 .left-column {
+    margin-bottom: 0.75rem;
+    width: 100%;
+  }
+
+  .header-3-3 .title-text-big {
+    font: 600 2.25rem / normal Poppins, sans-serif;
+    margin-bottom: 1.25rem;
+    color: #033142;
+  }
+
+  .header-3-3 .text-caption {
+    font: 300 1rem/1.5rem Poppins, sans-serif;
+    letter-spacing: 0.025em;
+    color: #8B9CAF;
+    margin-bottom: 5rem;
+  }
+
+  .header-3-3 .btn-get {
+    font: 600 1rem/1.5rem Poppins, sans-serif;
+    padding: 1rem 2rem;
+    border-radius: 999px;
+    border: 1px solid #4E91F9;
+    background-color: #4E91F9;
+    transition: 0.3s;
+  }
+
+  .header-3-3 .btn-get:hover {
+    background-color: #6DA4F9;
+    border: 1px solid #6DA4F9;
+  }
+
+  .header-3-3 .btn-outline {
+    font: 400 1rem/1.5rem Poppins, sans-serif;
+    padding: 1rem 1.5rem;
+    border-radius: 999px;
+    background-color: transparent;
+    border: 1px solid #A6B1BE;
+    color: #A6B1BE;
+    transition: 0.3s;
+  }
+
+  .header-3-3 .btn-outline:hover {
+    border: 1px solid #6DA4F9;
+    color: #6DA4F9;
+  }
+
+  .header-3-3 .btn-outline:hover div path {
+    fill: #6DA4F9;
+  }
+
+  .header-3-3 .btn-outline:hover div rect {
+    stroke: #6DA4F9;
+  }
+
+  .header-3-3 .right-column {
+    width: 100%;
+  }
+
+  .header-3-3 .hero-right {
+    right: 2rem;
+    bottom: 0;
+  }
+
+  .header-3-3 .card-outer {
+    padding-left: 0;
+    z-index: 1;
+  }
+
+  .header-3-3 .card {
+    transition: 0.4s;
+    top: 0px;
+    left: 0px;
+    background-color: #FFFFFF;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    width: 100%;
+    margin-top: 2.5rem;
+    box-shadow: -4px 4px 10px 0px rgba(203, 203, 203, 0.25);
+  }
+
+  .header-3-3 .card:hover {
+    top: -3px;
+    left: -3px;
+    transition: 0.4s;
+    box-shadow: -4px 8px 15px 0px rgba(167, 167, 167, 0.25);
+  }
+
+  .header-3-3 .card-name {
+    font: 600 1rem/1.5rem Poppins, sans-serif;
+    margin-bottom: 0.25rem;
+  }
+
+  .header-3-3 .card-job {
+    font: 300 0.75rem/1rem Poppins, sans-serif;
+    color: #aaa6a6;
+    margin-bottom: 0;
+  }
+
+  .header-3-3 .card-price-left {
+    font: 500 1rem/1.5rem Poppins, sans-serif;
+    margin-bottom: 0.125rem;
+    color: #1B8171;
+  }
+
+  .header-3-3 .card-caption {
+    font: 300 0.75rem/1rem Poppins, sans-serif;
+    color: #aaa6a6;
+    margin-bottom: 0;
+  }
+
+  .header-3-3 .card-price-right {
+    font: 500 1rem/1.5rem Poppins, sans-serif;
+    margin-bottom: 0.125rem;
+    color: #FF7468;
+  }
+
+  .header-3-3 .btn-hire {
+    font: 600 1rem/1.5rem Poppins, sans-serif;
+    padding: 0.75rem 4rem;
+    border-radius: 0.75rem;
+    margin-bottom: 0.125rem;
+    border: 1px solid #4E91F9;
+    background-color: #4E91F9;
+    transition: 0.3s;
+  }
+
+  .header-3-3 .btn-hire:hover {
+    background-color: #6DA4F9;
+    border: 1px solid #6DA4F9;
+  }
+
+  .header-3-3 .form {
+    border-radius: 999px;
+    background-color: #eef4fd;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 0rem 1rem;
+    padding-right: 0.5rem;
+    outline: none;
+  }
+
+  .header-3-3 .form div input[type="text"] {
+    background-color: #eef4fd;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 0rem 0.5rem;
+    outline: none;
+    width: 100%;
+  }
+
+  .header-3-3 .center-search {
+    bottom: 0.5rem;
+  }
+  .carousel-item img {
+    border-radius: 20px;
+    margin-left: 60px;
+    flex-direction: row;
+  }
+  .card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #2ec49c;
+  }
+
+  @media (min-width: 576px) {
+    .header-3-3 .modal-item .modal-dialog {
+      max-width: 95%;
+      border-radius: 12px;
+    }
+
+    .header-3-3 .navbar {
+      padding: 2rem;
+    }
+
+    .header-3-3 .title-text-big {
+      font-size: 3rem;
+      line-height: 1.2;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .header-3-3 .navbar {
+      padding: 2rem 4rem;
+    }
+
+    .header-3-3 .hr {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+
+    .header-3-3 .hero {
+      padding: 4rem;
+    }
+
+    .header-3-3 .left-column {
+      margin-bottom: 3rem;
+    }
+
+    .header-3-3 .hero-right {
+      right: 4rem;
+    }
+
+    .header-3-3 .card {
+      margin-left: auto;
+      margin-top: 0;
+    }
+  }
+
+  @media (min-width: 992px) {
+
+    .header-3-3 .navbar-light .navbar-nav .active:before {
+      content: "";
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      text-align: center;
+      bottom: 0;
+      height: 0px;
+      width: 80%;
+      /* or 100px */
+      border-bottom: 2px solid #4E91F9;
+    }
+
+    .header-3-3 .navbar {
+      padding: 2rem 6rem;
+    }
+
+    .header-3-3 .navbar-light .navbar-nav .nav-link {
+      padding: 0;
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+
+    .header-3-3 .navbar-light .navbar-nav .active:before {
+      width: 40%;
+    }
+
+    .header-3-3 .hr {
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
+
+    .header-3-3 .hero {
+      padding: 4rem 6rem 5rem;
+    }
+
+    .header-3-3 .left-column {
+      width: 50%;
+      margin-bottom: 0;
+    }
+
+    .header-3-3 .title-text-big {
+      font-size: 3.75rem;
+      line-height: 1.25;
+    }
+
+    .header-3-3 .right-column {
+      width: 50%;
+    }
+
+    .header-3-3 .hero-right {
+      right: 6rem;
+    }
+
+    .header-3-3 .card-outer {
+      padding-left: 4rem;
+    }
+
+    .header-3-3 .center-search {
+      left: 48%;
+      top: 50%;
+      bottom: auto;
+      transform: translate(-48%, -50%);
+    }
+
+    .header-3-3 .form {
+      width: 340px;
+    }
+
+  }
+
+  @media (max-width: 1023px) {
+    .header-3-3 .form div input[type="text"] {
+      width: 100%;
+    }
+  }
+
+</style>
+<div class="header-3-3 container-xxl mx-auto p-0 position-relative" style="font-family: 'Poppins', sans-serif">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a href="#">
+      <img style="margin-right: 0.75rem; max-width: 10rem; "
+        src="https://mafiwo.com/img/bukakotoko.png" alt="" class="w-50" />
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="modal" data-bs-target="#targetModal-item">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="modal-item modal fade" id="targetModal-item" tabindex="-1" role="dialog"
+      aria-labelledby="targetModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content bg-white border-0">
+          <div class="modal-header border-0" style="padding: 2rem; padding-bottom: 0">
+            <a class="modal-title" id="targetModalLabel">
+              <img style="margin-top: 0.5rem"
+                src="https://assets.bukalapak.com/sigil/bukalapak-logo-primary.svg"
+                alt="" />
+            </a>
+            <button type="button" class="close btn-close text-white" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="padding: 2rem; padding-top: 0; padding-bottom: 0">
+            <ul class="navbar-nav responsive me-auto mt-2 mt-lg-0">
+              <li class="nav-item active position-relative">
+                <a class="nav-link main" style="color: #033142;" href="#">Beranda</a>
+              </li>
+              <li class="nav-item position-relative">
+                <a class="nav-link" href="barnag_baru.html">Barang Baru</a>
+              </li>
+              <li class="nav-item position-relative">
+                <a class="nav-link" href="#">Seller Center</a>
+              </li>
+              <li class="nav-item position-relative">
+                <a class="nav-link" href="#">Pengembang</a>
+              </li>
+              <li class="nav-item position-relative">
+                <a class="nav-link" data-bs-toggle="collapse" href="#collapse" role="button" aria-expanded="false"
+                  aria-controls="collapse">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M5.85 1.69346C3.5304 1.69346 1.65 3.57386 1.65 5.89346C1.65 8.21305 3.5304 10.0935 5.85 10.0935C8.1696 10.0935 10.05 8.21305 10.05 5.89346C10.05 3.57386 8.1696 1.69346 5.85 1.69346ZM0.25 5.89346C0.25 2.80066 2.75721 0.293457 5.85 0.293457C8.94279 0.293457 11.45 2.80066 11.45 5.89346C11.45 8.98625 8.94279 11.4935 5.85 11.4935C2.75721 11.4935 0.25 8.98625 0.25 5.89346Z"
+                      fill="#8B9CAF" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M8.85503 8.89848C9.12839 8.62512 9.57161 8.62512 9.84497 8.89848L14.045 13.0985C14.3183 13.3718 14.3183 13.8151 14.045 14.0884C13.7716 14.3618 13.3284 14.3618 13.055 14.0884L8.85503 9.88843C8.58166 9.61506 8.58166 9.17185 8.85503 8.89848Z"
+                      fill="#8B9CAF" />
+                  </svg>
+                </a>
+                <form method class="collapse position-absolute form center-search border-0" id="collapse">
+                  <div class="d-flex">
+                    <input type="text" class="rounded-full border-0 focus:outline-none" placeholder="Search" />
+                    <button class="btn" type="button">
+                      <svg style="width: 20px; height: 20px" data-bs-toggle="collapse" href="#collapse"
+                        role="button" aria-expanded="false" aria-controls="collapse" fill="none" stroke="#273B56"
+                        viewBox="0 0 03 03" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer border-0" style="padding: 2rem; padding-top: 0.75rem">
+            <button class="btn btn-default btn-no-fill">Masuk</button>
+            <button class="btn btn-fill text-white">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+      <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+        <li class="nav-item active position-relative">
+          <a class="nav-link main" style="color: #033142;" href="#">Beranda</a>
+        </li>
+        <li class="nav-item position-relative">
+          <a class="nav-link" href="baramg_baru.html">Barang Baru</a>
+        </li>
+        <li class="nav-item position-relative">
+          <a class="nav-link" href="#">Seller Center</a>
+        </li>
+        <li class="nav-item position-relative">
+          <a class="nav-link" href="#">Pengembang</a>
+        </li>
+        <li class="nav-item my-auto">
+          <a class="nav-link" data-bs-toggle="collapse" href="#collapse" role="button" aria-expanded="false"
+            aria-controls="collapse">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5.85 1.69346C3.5304 1.69346 1.65 3.57386 1.65 5.89346C1.65 8.21305 3.5304 10.0935 5.85 10.0935C8.1696 10.0935 10.05 8.21305 10.05 5.89346C10.05 3.57386 8.1696 1.69346 5.85 1.69346ZM0.25 5.89346C0.25 2.80066 2.75721 0.293457 5.85 0.293457C8.94279 0.293457 11.45 2.80066 11.45 5.89346C11.45 8.98625 8.94279 11.4935 5.85 11.4935C2.75721 11.4935 0.25 8.98625 0.25 5.89346Z"
+                fill="#8B9CAF" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M8.85503 8.89848C9.12839 8.62512 9.57161 8.62512 9.84497 8.89848L14.045 13.0985C14.3183 13.3718 14.3183 13.8151 14.045 14.0884C13.7716 14.3618 13.3284 14.3618 13.055 14.0884L8.85503 9.88843C8.58166 9.61506 8.58166 9.17185 8.85503 8.89848Z"
+                fill="#8B9CAF" />
+            </svg>
+          </a>
+          <form class="collapse position-absolute form center-search border-0" id="collapse">
+            <div class="d-flex">
+              <input type="text" class="rounded-full border-0 focus:outline-none" placeholder="Search" />
+              <button class="btn" type="button">
+                <svg style="width: 20px; height: 20px" data-bs-toggle="collapse" href="#collapse" role="button"
+                  aria-expanded="false" aria-controls="collapse" fill="none" stroke="#273B56" viewBox="0 0 03 03"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                  </path>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </li>
+      </ul>
+      <button class="btn btn-default btn-no-fill">Masuk</button>
+      <button class="btn btn-fill text-white" > <a href="daftar.html" class="text-white"  >Register</a></button>
+    </div>
+  </nav>
+       <div>
+           <div>
+               <h1>Halo, Entrepeneur !!!</h1>
+          </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Simpan Laporan</span>
+            <a class="link-secondary" href="#" aria-label="Add a new report">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Bulanan
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Mingguan
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Harian
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Acara Khusus
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Statistik Penjualan</h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Bagikan</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Export/Simpan</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Minggu ini
+            </button>
+          </div>
+        </div>
+  
+        <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="787" height="332" style="display: block; width: 787px; height: 332px;"></canvas>
+        
+        <h2>Data Pembeli</h2>
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Kode Barang</th>
+                <th scope="col">Nama Barang</th>
+                <th scope="col">Jumlah Barang</th>
+                <th scope="col">Harga/Unit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1,001</td>
+                <td>random</td>
+                <td>data</td>
+                <td>placeholder</td>
+                <td>text</td>
+              </tr>
+              <tr>
+                <td>1,002</td>
+                <td>placeholder</td>
+                <td>irrelevant</td>
+                <td>visual</td>
+                <td>layout</td>
+              </tr>
+              <tr>
+                <td>1,003</td>
+                <td>data</td>
+                <td>rich</td>
+                <td>dashboard</td>
+                <td>tabular</td>
+              </tr>
+              <tr>
+                <td>1,003</td>
+                <td>information</td>
+                <td>placeholder</td>
+                <td>illustrative</td>
+                <td>data</td>
+              </tr>
+              <tr>
+                <td>1,004</td>
+                <td>text</td>
+                <td>random</td>
+                <td>layout</td>
+                <td>dashboard</td>
+              </tr>
+              <tr>
+                <td>1,005</td>
+                <td>dashboard</td>
+                <td>irrelevant</td>
+                <td>text</td>
+                <td>placeholder</td>
+              </tr>
+              <tr>
+                <td>1,006</td>
+                <td>dashboard</td>
+                <td>illustrative</td>
+                <td>rich</td>
+                <td>data</td>
+              </tr>
+              <tr>
+                <td>1,007</td>
+                <td>placeholder</td>
+                <td>tabular</td>
+                <td>information</td>
+                <td>irrelevant</td>
+              </tr>
+              <tr>
+                <td>1,008</td>
+                <td>random</td>
+                <td>data</td>
+                <td>placeholder</td>
+                <td>text</td>
+              </tr>
+              <tr>
+                <td>1,009</td>
+                <td>placeholder</td>
+                <td>irrelevant</td>
+                <td>visual</td>
+                <td>layout</td>
+              </tr>
+              <tr>
+                <td>1,010</td>
+                <td>data</td>
+                <td>rich</td>
+                <td>dashboard</td>
+                <td>tabular</td>
+              </tr>
+              <tr>
+                <td>1,011</td>
+                <td>information</td>
+                <td>placeholder</td>
+                <td>illustrative</td>
+                <td>data</td>
+              </tr>
+              <tr>
+                <td>1,012</td>
+                <td>text</td>
+                <td>placeholder</td>
+                <td>layout</td>
+                <td>dashboard</td>
+              </tr>
+              <tr>
+                <td>1,013</td>
+                <td>dashboard</td>
+                <td>irrelevant</td>
+                <td>text</td>
+                <td>visual</td>
+              </tr>
+              <tr>
+                <td>1,014</td>
+                <td>dashboard</td>
+                <td>illustrative</td>
+                <td>rich</td>
+                <td>data</td>
+              </tr>
+              <tr>
+                <td>1,015</td>
+                <td>random</td>
+                <td>tabular</td>
+                <td>information</td>
+                <td>text</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+
+</section><footer class="page-footer font-small blue">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"></script>
+
+  <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap");
+
+      * {
+          font-family: 'Inter', sans-serif !important;
+      }
+
+      body .font-red-hat-display {
+          font-family: 'Red Hat Display', sans-serif !important;
+      }
+
+      body footer {
+          background: #313E60;
+          padding-top: 15px;
+          padding-bottom: 15px;
+      }
+
+      body footer .logo {
+          font-family: 'Red Hat Display', sans-serif;
+          font-weight: 100;
+          font-size: 21px;
+          line-height: 28px;
+          color: #FAFAFD;
+      }
+
+      body footer .social-media {
+          margin-top: 55px;
+      }
+
+      body footer .copyright {
+          font-family: 'Red Hat Display', sans-serif !important;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 135%;
+          color: #FAFAFD;
+          margin-top: 20px;
+      }
+
+      body footer .nav-footer p {
+          font-weight: 700 !important;
+          font-family: 'Red Hat Display', sans-serif !important;
+          font-size: 20px;
+          line-height: 135%;
+          color: #FAFAFD;
+      }
+
+      body footer .nav-footer a {
+          font-weight: 400 !important;
+          font-family: 'Red Hat Display', sans-serif !important;
+          font-size: 20px;
+          line-height: 135%;
+          color: #FAFAFD;
+      }
+
+      body footer li {
+          margin-bottom: 16px;
+      }
+  </style>
+  <div class="container text-md-left">
+      <div class="row">
+          <div class="col-md-6 mt-md-0 mt-3 address">
+              <div class="logo font-red-hat-display">
+                  BukaKoToko
+              </div>
+              <div class="social-media">
+                  <a href="#">
+                      <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content10/bi_linkedin.svg"
+                          alt="linkedin" class="img-fluid mr-4">
+                  </a>
+                  <a href="#">
+                      <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content10/bi_facebook.svg"
+                          alt="facebook" class="img-fluid mr-4">
+                  </a>
+                  <a href="#">
+                      <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content10/bi_twitter.svg"
+                          alt="twitter" class="img-fluid mr-4">
+                  </a>
+                  <a href="#">
+                      <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content10/bi_instagram.svg"
+                          alt="twitch" class="img-fluid mr-4">
+                  </a>
+              </div>
+              <div class="copyright font-red-hat-display">
+                  2021 All rights reserved.
+              </div>
+          </div>
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="row col-md-6 nav-footer">
+              <div class="col-md-4 mb-md-0 mb-3">
+                  <p>
+                      Features
+                  </p>
+                  <ul class="list-unstyled">
+                      <li>
+                          <a href="#!">Payments</a>
+                      </li>
+                      <li>
+                          <a href="#!">Collections</a>
+                      </li>
+                      <li>
+                          <a href="#!">Conversions</a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="col-md-4 mb-md-0 mb-3">
+                  <p>
+                      Resources
+                  </p>
+                  <ul class="list-unstyled">
+                      <li>
+                          <a href="#!">Blog</a>
+                      </li>
+                      <li>
+                          <a href="#!">FAQ</a>
+                      </li>
+                      <li>
+                          <a href="#!">Partnerships</a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="col-md-4 mb-md-0 mb-3">
+                  <p>
+                      Our Company
+                  </p>
+                  <ul class="list-unstyled">
+                      <li>
+                          <a href="#!">About Us</a>
+                      </li>
+                      <li>
+                          <a href="#!">Careers</a>
+                      </li>
+                      <li>
+                          <a href="#!">News & Media</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer> 
+   </body>
+</html>
